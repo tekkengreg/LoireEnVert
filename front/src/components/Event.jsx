@@ -66,7 +66,7 @@ const Event = ({ event }) => (
           </CardSubtitle> */}
         {/* <br /> */}
           <CardSubtitle className="itemEvent">
-          {event.categories_id && event.categories_id.map(cat =>  <span>{cat && cat.name} </span>)}
+          {event.categories_id && event.categories_id.map((cat,i) =>  <span key={`cat${i}`}>{cat && cat.name} </span>)}
           </CardSubtitle>
         </CardBody>
       </Card>

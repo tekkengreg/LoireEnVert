@@ -1,3 +1,5 @@
 node_modules
 build
-cordova\platforms
+cordova/platforms
+cordova/platforms/android
+cordova/plugins

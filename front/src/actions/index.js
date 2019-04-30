@@ -46,7 +46,15 @@ export const fetchEvents = filter => {
 
           const regexFindImage = /<img.*?https?(.*?(?:jpg|png)).*?>/;
           const eventswithImg = eventsLoire.map(event => {
-            return ({ ...event, image: `http${regexFindImage.exec(event.post_content)[1]}` })
+            let image='';
+            try{
+
+              image = `http${regexFindImage.exec(event.post_content)[1]}`;
+              console.log('image',image)
+            }finally{
+
+              return ({ ...event, image })
+            }
           })
 
           /**
