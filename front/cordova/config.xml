@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.loireenvert.cordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="fr.loireenvert.cordova" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>LoireEnVert</name>
     <description>
         Une application nature.
@@ -47,5 +47,5 @@
     <plugin name="org.apache.cordova.geolocation" spec="^0.3.6" />
     <plugin name="cordova.plugins.diagnostic" spec="^4.0.10" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
-    <engine name="android" spec="^7.1.4" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
