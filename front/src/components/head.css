@@ -3,7 +3,7 @@
 .header {
   top: 0;
   max-width: 900px;
-  max-height: 25vmin;
+  /* max-height: 25vmin; */
   background-color: transparent;
   font-family: "Patrick Hand", Arial, cursive;
   font-size: 5vmin;
@@ -15,7 +15,8 @@
 }
 
 .headerRow {
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
 }
 
 .headerLogo {

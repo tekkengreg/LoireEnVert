@@ -68,7 +68,7 @@ class EventFilterWhere extends Component {
 
           <Row>
             {this.state.buttonList.map((button, index) => (
-              <Col xs="12" sm="12" md="12" key={index}>
+              <Col xs="12" sm="12" md="12" key={`where-${index}`}>
                 <Button
                   className="buttonFilterWhoWhere"
                   onClick={() => this.eventsFiltred(button.filter)} //Rappelle de la fonction eventsFiltred

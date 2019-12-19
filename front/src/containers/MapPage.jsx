@@ -55,21 +55,22 @@ class MapPage extends Component {
 
   componentDidMount() {
     //geolocalisation avec plugins de cordova pour autoriser la géolocalisation
-    window.cordova.plugins.diagnostic.isLocationAuthorized((authorized) => {
-      if (!authorized) {
-        window.cordova.plugins.diagnostic.requestLocationAuthorization((status) => {
-          this.getPosition();
-        })
-      } else {
-        this.getPosition();
-      }
-    })
+    // window.cordova.plugins.diagnostic.isLocationAuthorized((authorized) => {
+    //   if (!authorized) {
+    //     window.cordova.plugins.diagnostic.requestLocationAuthorization((status) => {
+    //       this.getPosition();
+    //     })
+    //   } else {
+    this.getPosition();
+    //   }
+    // })
   }
 
   getPosition() {
-      // récupère la localisation
+    // récupère la localisation
     this.setState({ loader: true }) // spinner actif dès affichage de la map
     navigator.geolocation.getCurrentPosition(position => {
+      console.log('gg ok', position)
       //si les coordonnées sont trouver le spinner passe en false
       this.setState({
         location_latitude: position.coords.latitude,
@@ -77,6 +78,7 @@ class MapPage extends Component {
         loader: false,
       });
     }, error => {
+      console.log('gg ko', error)
       //si les cordonnées Gps ne sont pas trouvées alors le spinner passe en false et alerte en true
       this.setState({
         loader: false,
@@ -85,9 +87,9 @@ class MapPage extends Component {
       })
     }, {
       // impose un temps de recherche de la géolocalisation
-        timeout: 10000,
-        enableHighAccuracy: false
-      });
+      timeout: 10000,
+      enableHighAccuracy: false
+    });
   }
   // componentWillMount() {
   //   console.log("here", this.props.filterEvents);
@@ -143,7 +145,7 @@ class MapPage extends Component {
           {/*affiche l'alerte suivant état de la condition et de si la geolocalisation à été trouvée */}
           {this.state.alert ?
             <div>
-              <Alert color="dark" style={{ height: '25vmin', width: '92vmin', marginTop: '40vmin', position:'fixed', zIndex:'9999' }} isOpen={this.state.visible} toggle={this.onDismiss}>
+              <Alert color="dark" style={{ height: '25vmin', width: '92vmin', marginTop: '40vmin', position: 'fixed', zIndex: '9999' }} isOpen={this.state.visible} toggle={this.onDismiss}>
                 {this.state.alert}
               </Alert>
             </div> :
@@ -164,19 +166,19 @@ class MapPage extends Component {
             {this.props.activeEvents.events.map((event, index) => {
               if (event.location_latitude && event.location_longitude)
                 return (
-                  <Marker position={[event.location_latitude, event.location_longitude]} icon={iconGreen} onClick={()=> this.setState({currentEvent:event})}>
+                  <Marker position={[event.location_latitude, event.location_longitude]} icon={iconGreen} onClick={() => this.setState({ currentEvent: event })}>
                   </Marker>
                 );
               else return "";
             })}
           </Map>
         </Container>
-        {this.state.currentEvent?
-        <div className="eventPopup">
-          <button onClick={()=>this.setState({currentEvent:null})}>Fermer</button>
-          <Event event={this.state.currentEvent} />
-        </div>
-        : ""
+        {this.state.currentEvent ?
+          <div className="eventPopup">
+            <button onClick={() => this.setState({ currentEvent: null })}>Fermer</button>
+            <Event event={this.state.currentEvent} />
+          </div>
+          : ""
         }
 
       </div>

@@ -30,7 +30,7 @@ a {
 
 .mainContainer {
   padding-top: 10px;
-  min-height: 225vmin;
+  /* min-height: 225vmin; */
 }
 
 /*composant EventDetails*/
@@ -127,21 +127,24 @@ a {
   justify-content: space-between;
 }
 
-.activeNB {
+/* .activeNB {
   display: block;
   opacity: 0.3;
+} */
+.navCustom {
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
 }
-
 .icon {
   height: 100%;
-  width: 25%;
+  width: auto;
   text-align: center;
 }
 
 .icon img {
-  padding: 28%;
-  width: 90%;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
 }
 .menuB {
@@ -159,23 +162,19 @@ a {
 }
 
 .menuBurger {
-  margin-top: 90px;
-  margin-left: -15px;
-  margin-right: -15px;
-  border-bottom: 1px solid #4b4b4b;
-  border-top: 1px solid #4b4b4b;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: white;
+  height: 66vh;
+  justify-content: space-around;
 }
 .menuB {
   font-family: "Patrick Hand", Arial, sans-serif;
-  font-size: 2.2em;
-  border: 1px solid #4b4b4b;
-  padding-left: 15px;
+  font-size: 1.6em;
+  padding: 15px;
   width: 100vw;
   height: 12, 5vh;
+  background: white;
+  box-shadow: 0 0 4px 0 #9e9e9e;
 }
 
 .espace {
@@ -225,19 +224,23 @@ a {
 /* Map */
 
 .map {
-  height: 64vh;
+  height: 60vh;
   width: 100%;
 }
+.sweet-loading {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
-
-.eventPopup{
+.eventPopup {
   position: fixed;
   bottom: 0;
   margin: 25px;
   margin-bottom: 80px;
-  z-index:9999;
+  z-index: 9999;
 }
-.eventPopup > button{
+.eventPopup > button {
   position: absolute;
   top: 0;
   right: 0;

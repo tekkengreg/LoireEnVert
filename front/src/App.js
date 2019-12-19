@@ -43,8 +43,7 @@ class App extends Component {
         <HashRouter>
           <div className="containerGeneral">
             <Navbar className="notreNavbar navbar-default navbar-fixed-bottom">
-              {/* Julie : Link permet de ne pas recharger la page et de garder en mémoire les choix du filtre */}
-              <Nav>
+              <Nav className="navCustom">
                 <NavItem className="icon">
                   <NavLink to="/events" activeClassName="activeNB">
                     <img src={list} alt="list" />

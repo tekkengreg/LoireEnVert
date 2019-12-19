@@ -22,6 +22,10 @@
   align-items: baseline;
   min-height: 21vmin;
 }
+button.buttonFilterWhoWhere.btn.btn-secondary.btn-lg.btn-block {
+  background-color: white;
+  box-shadow: 0 0 8px 0 #9e9e9e;
+}
 .buttonFilterWhoWhere img {
   max-width: 11vmin;
   min-height: 7vmin;

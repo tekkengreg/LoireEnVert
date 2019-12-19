@@ -7,20 +7,6 @@ import moment from "moment";
 import LinesEllipsis from "react-lines-ellipsis";
 import "./eventList.css";
 
-// const styleEuro = {
-//   euro: {
-//     background: `url(${backgroundEuro})`,
-//     backgroundSize: "contain",
-//     opacity: "0.5",
-//     backgroundRepeat: "no-repeat",
-//     height: "20px",
-//     width: "20px",
-//     float: "right",
-//     marginLeft: "1vh"
-//     //padding: '5px',
-//   }
-// };
-// Lisa : affichage des dates en fr avec momentjs
 const idLocale = require("moment/locale/fr");
 moment.locale("fr", idLocale);
 
@@ -40,9 +26,6 @@ const Event = ({ event }) => (
             maxLine="2"
             basedOn="letters"
           />
-          {/* <CardSubtitle className="itemEvent">
-            <p className="eventTitle">{event.event_name} </p>
-          </CardSubtitle> */}
           <CardSubtitle className="itemEvent">
             <p className="typeEvent">{event.name} </p>
           </CardSubtitle> <br/>
